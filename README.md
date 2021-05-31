@@ -61,3 +61,17 @@ Modify the code at `line 63` in `concnt.py`
 ### Where is log's path?
 
 log will generate in `./log` directory as file named `YYYY-MM-DD.log`. For example `2021-06-01.log`.
+
+### How to use log file?
+
+You can generate scatter plot regarding *down time* and *down seconds*.
+
+Log file's format is csv separated by `,` , so you can open libreoffice calc or anything software.
+
+But, LibreOffice Calc don't support log's ISO-8601 format, so you must convert to `YYYY-MM-DD HH:MM:SS` . For example, you can use `RFC2822 datetime` in [this site with converting](https://dencode.com/ja/date).
+
+On using *LibreOffice Calc* and *dencode.com*, you should setting property `Datetime(DMY)` to cells when paste datetime list.
+
+For more detail, please watch this video.
+
+![](./observe_con-genPlot.gif)

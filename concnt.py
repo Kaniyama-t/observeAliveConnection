@@ -8,7 +8,7 @@ import pickle
 JST = timezone(timedelta(hours=+9), 'JST')
 
 HOME = "/home/kaniyama/.script/concnt/"
-PATH_LOGS = HOME + "log/{0}".format(datetime.now().strftime("%Y-%m-%d.log"))
+PATH_LOGS = HOME + "log/{0}".format(datetime.now().strftime("%Y-%m-%d.log.csv"))
 
 PATH_IS_DISCONNECTED = HOME + "var/isDisconnected"
 PATH_LAST_DOWN_TIME  = HOME + "var/lastDownTime"
@@ -66,7 +66,7 @@ class concnt:
             lastDownSec = (self.lastDownTime - self.lastDownInitTime).seconds
             lastDownTimeStr = self.lastDownTime.strftime("%H:%M")
             msg = "{0}({1:>2}sec)".format(lastDownTimeStr, lastDownSec)
-            self.printForI3Bar(msg)
+            self.printForI3Bar(self.recentTimeText(msg)) #(msg)
         return self
 
     def onConnect(self):
